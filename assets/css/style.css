@@ -19,7 +19,9 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -52,14 +54,18 @@ header a {
     letter-spacing: 4px;
     list-style-type: none;
 }
-#menu > li {
+
+#menu>li {
     margin-bottom: 1em;
 }
+
 .active {
     border-bottom: 1px solid #3a3a3a;
 }
+
 /* Nav bar toggle dropdown menu*/
-nav { position: absolute;
+nav {
+    position: absolute;
     background-color: #ffffff;
     width: 100%;
     left: 0;
@@ -69,6 +75,7 @@ nav { position: absolute;
     top: 100%;
 
 }
+
 /* Nav toggle*/
 
 #nav-toggle:checked~nav {
@@ -82,6 +89,7 @@ nav { position: absolute;
 .nav-toggle-label {
     font-size: 2rem;
 }
+
 /*main content*/
 main {
     /* Make the main element take any extra surplus space to push footer down*/
@@ -99,18 +107,19 @@ main {
 
 #cover-text {
     /*Final rgba sets the opacity to semi-transparent*/
-    background-color: rgba(247, 109, 107, .7);
+    background-color: rgba(241, 109, 107, .7);
     font-size: 130%;
     position: absolute;
     bottom: 30px;
     width: 80%;
     min-height: 200px;
-    padding: 40px;
+    padding-top: 40px;
     padding-left: 10px;
 
 }
 
-#cover-text > h2, #cover-text > h3 {
+#cover-text>h2,
+#cover-text>h3 {
     color: #ffffff;
 }
 
@@ -118,52 +127,77 @@ main {
     width: 90%;
     margin: 20px auto;
 }
+
 #reasons h2 {
     margin-bottom: 20px;
     text-align: center;
     font-size: 280%;
 }
-#benefits-phisical>div, #benefits-mental>div {
+
+#benefits-physical>div,
+#benefits-mental>div {
     line-height: 20px;
     margin-bottom: 20px;
 }
+
 #benefits p {
     padding: 0 20px;
 }
 
 
-benefits hr {
+#benefits hr {
     border-top: 1px solid #3a3a3a;
     margin: 5px 0;
 }
+
 #circle-cover-bg {
     background: url('../images/reasons-image.webp') no-repeat top center / cover;
     height: 90vw;
     width: 90vw;
     margin-bottom: 20px;
     border-radius: 50%;
-    max-height: 300px;
     max-width: 300px;
- }
+    max-height: 300px;
 
- #benefits-image {
+}
+
+#benefits-image {
     display: flex;
-    align-self: center;
+    align-items: center;
     justify-content: center;
 
- }
+}
 
+/*Meetup times section*/
+#times {
+    background: url('../images/dublin-city.webp') no-repeat center/cover;
+    /*Handels resposivity without a media query*/
+display: flex; 
+flex-wrap: wrap;
+}
 
+#times div {
+    color: #fafafa;
+    background-color: rgba(0, 0, 0, .6);
+    padding: 15px;
+    text-align: center;
+    flex-basis: 200px;
+    flex-grow: 1;
+    border: 2px solid white;
+}
 
-
+#times h3 {
+    /*Overide the heading color set in the general styles*/
+    color: #fafafa;
+}
 
 /*footer*/
-#social-networks{
+#social-networks {
     text-align: center;
     padding: 20px 0;
     display: flex;
     justify-content: space-evenly;
-    list-style-type: none;   
+    list-style-type: none;
 }
 
 #social-networks i {
@@ -171,50 +205,101 @@ benefits hr {
     padding: 5%;
     color: #3a3a3a;
 }
+
 /*Media query for tablet and larger screen*/
 @media screen and (min-width:768px) {
+
     /*header*/
-   nav { display: block;
-    position: relative;
-    box-shadow: none;
-    width: fit-content;
-    padding-right: 1rem;
-}
+    nav {
+        display: block;
+        position: relative;
+        box-shadow: none;
+        width: fit-content;
+        padding-right: 1rem;
+    }
 
-#menu {
-    display:flex;
-}
+    #menu {
+        display: flex;
+    }
 
-#menu > li {
-    padding-left: 1rem;
-}
+    #menu>li {
+        padding-left: 1rem;
+    }
 
-.nav-toggle-label {
-    display: none;
-}
+    .nav-toggle-label {
+        display: none;
+    }
 
-/*Hero*/
-#cover-text {
-    width: 300px;
-    right: 50px;
-}
-}
+    #logo {
+        font-size: 280%;
+        line-height: 75px;
+        margin-left: 0 0.5rem;
+    }
 
-#logo{
-    font-size: 280%;
-    line-height: 75px;
-    margin-left: 0.5rem;  
-}
+    /* Main content*/
+    main {
+        /*Push main content down to accomodate larger header */
+        margin-top: 79px;
+    }
 
-/* Main content*/
-main {
-    /*Push main content down to accomodate larger header */
-    margin-top: 79px;
+    /*Hero*/
+    #cover-text {
+        width: 300px;
+        right: 50px;
+    }
+
+    /*Reasons section*/
+    #benefits-physical,
+    #benefits-mental {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #benefits-physical>div,
+    #benefits-mental>div {
+        width: 75%;
+    }
+
+    #benefits-mental>div {
+        text-align: end;
+        align-self: flex-end;
+    }
 }
 
 /* Larger devices (Laptops and desktops 992px an up) */
 @media screen and (min-width: 992px) {
     #menu a:hover {
         border-bottom: 1px solid #3a3a3a;
-    }      
     }
+}
+
+/*Media query for screens  1200px or wider*/
+@media screen and (min-width: 1200px) {    
+    /* Reasons section */
+    #benefits {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #benefits > div {
+        flex: 1;
+    }
+
+    #benefits-image {
+        order: 0;        
+    }
+
+    #benefits-mental {
+        order: 1;
+    }
+
+    #benefits-mental > div {
+        align-self: flex-end;
+    }
+
+    #benefits-physical > div {
+        align-self: flex-start;
+    }
+}
+
