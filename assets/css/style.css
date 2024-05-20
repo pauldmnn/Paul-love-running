@@ -220,8 +220,17 @@ flex-wrap: wrap;
     color: #3a3a3a;
 }
 
-/*Media query for tablet and larger screen*/
-@media screen and (min-width:768px) {
+/*Media query for large or landscape photos 576px*/
+@media screen and (min-width: 576px) {
+    #photos {
+        column-count: 2;
+        column-gap: 0;
+    }
+}
+
+
+/*Media query for tablet and larger screen (768px and up)*/
+@media screen and (min-width: 768px) {
 
     /*header*/
     nav {
@@ -279,12 +288,22 @@ flex-wrap: wrap;
         text-align: end;
         align-self: flex-end;
     }
+
+    /*Gallery*/
+    #photos {
+        column-count: 3;
+    }
 }
 
 /* Larger devices (Laptops and desktops 992px an up) */
 @media screen and (min-width: 992px) {
     #menu a:hover {
         border-bottom: 1px solid #3a3a3a;
+    }
+
+    /*Gallery*/
+    #photos {
+        column-count: 4;
     }
 }
 
